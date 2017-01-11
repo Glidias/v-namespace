@@ -66,23 +66,26 @@ Specifies an explicit 'mixed' scope for  the `v-namespace`. When in this mode, y
 Example:
 
     @include v-namespace('some-custom-prefix_', 'mixed') {
-         .-class-name {
-              color:red;
-          } 
-         .googlemaps {
-                background-color:black;
+         .comp {
+             .-class-name {
+                  color:red;
+              } 
+             .googlemaps {
+                    background-color:black;
+              }
           }
     }
   
   becomes
   
-
-         .some-custom-prefix_class-name {
-              color:red;
-          } 
-         .googlemaps {
-                background-color:black;
-          }
+        .some-custom-prefix_comp {
+             .some-custom-prefix_class-name {
+                  color:red;
+              } 
+             .googlemaps {
+                    background-color:black;
+              }
+         }
    
  As you can see, only the `.-` pattern is replaced by the prefix.
  
