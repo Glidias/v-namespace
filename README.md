@@ -1,6 +1,7 @@
 # v-namespace
 Adds custom prefix to all class declarations within v-namespace blocks for your CSS/SCSS files.
 
+Mainly used for distributing css-skinnable (but having completely self-contained base css styles) modular components anywhere (with a specific namespace) and providing a way of ensuring it's css class declarations will not be affected by any holding global/parenting css class names you may end up using anywhere else on your site/app.
 
 Just enclose your SCSS/CSS content some kind of `@include v-namespace("prefixNamespaceGoesHere-") {` block `}` mixin stub directive. Any content within that namespaced block  scope with _`./{some alphabet}/`_  (ie. a dot and then an alphabet) will be assumed to be a class identifier, and will be prepended with the literal string as specified in the namespace directive.
 
@@ -11,6 +12,9 @@ Example:
            @include v-namespace('some-custom-prefix-') {
               .listitem {
                   background-color:#33141F;
+              }
+              .col-md-8 {
+                  display:flex;
               }
               @include v-namespace('another-custom-prefix-') {
                   .listitem {
@@ -32,6 +36,9 @@ will become this:
               some-custom-prefix-listitem {
                   background-color:#33141F;
               }
+              .some-custom-prefix-col-md-8 {
+                  display:flex;
+              }
              
                   .another-custom-prefix-listitem {
                       background-color:#aabbcc;
@@ -44,7 +51,7 @@ will become this:
        }
     }
   
-If you are running under SCSS, you can specify a variable name for the component prefix like `@include v-namespace($varName)`. The namespace prefix will be translated as `#{$varName}` according to SCSS conventions, and will produce something like _`.#{$varName}className {`_.
+If you are running under SCSS, you can specify a variable name for the component prefix like `@include v-namespace($varName)`. The namespace prefix will be translated as `#{$varName}` according to SCSS conventions, and will produce something like _`.#{$varName}className {`_. If you use variable references, you can manage all custom skinning component namespaces from a central location.
 
 ## Flags
 
@@ -78,6 +85,12 @@ Example:
           }
    
  As you can see, only the `.-` pattern is replaced by the prefix.
+ 
+ ## Some Caveats
+ 
+For simplicity of implementation, the code involves naive find and replace. So it might accidentally replace some strings (particularly within css comments) that might end up being mistaken as CSS class names. 
+
+It's best to leave your CSS code uncommeted within namespaced blocks, and/or ensure any `.` dot character has a leading space after it to avoid accidental prefixing. eg. Use of `content:` CSS property would be particular tricky if you need to have an alphabet directly after a preceding dot, and you might have to resort to SCSS variable names declared outside of any component namespaced block to get around the caveat.
  
  
 # Gulp integration
