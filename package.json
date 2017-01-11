@@ -1,0 +1,19 @@
+{
+  "name": "gulp-v-namespace",
+  "description": "Adds custom prefix to all class declarations within v-namespace blocks for your CSS/SCSS files",
+  "version": "1.0.0",
+  "authors": [
+    "Glenn Ko <glidias@hotmail.com>"
+  ],
+ "repository": {
+    "type": "git",
+    "url": "git://github.com/Glidias/v-namespace.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "node-balanced": "0.0.14"
+  },
+  "files": [
+    "index.js"
+  ]
+}
