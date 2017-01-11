@@ -58,7 +58,7 @@ Specifies an explicit 'mixed' scope for  the `v-namespace`. When in this mode, y
 
 Example:
 
-    @include v-namespace('some-custom-prefix-', 'mixed') {
+    @include v-namespace('some-custom-prefix_', 'mixed') {
          .-class-name {
               color:red;
           } 
