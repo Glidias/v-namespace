@@ -1,5 +1,5 @@
 {
-  "name": "gulp-v-namespace",
+  "name": "v-namespace",
   "description": "Adds custom prefix to all class declarations within v-namespace blocks for your CSS/SCSS files",
   "version": "1.0.0",
   "authors": [
