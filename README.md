@@ -1,5 +1,19 @@
 # v-namespace
-Adds custom prefix to all class declarations within v-namespace blocks for your CSS/SCSS files.
+Adds custom prefix to all class declarations within v-namespace blocks for your CSS/SCSS files/strings.
+
+    var doPrefix = require("v-namespace");
+    var css = `
+        @include v-namespace('some-custom-prefix-') {
+            .comp {
+                color:black;
+                .btn {
+                    color:white;
+                }
+                .a.b { color:red; }
+            }
+        }
+    `;
+    css = doPrefix(css);
 
 Mainly used for distributing css-skinnable (but having completely self-contained base css styles) modular components anywhere (with a specific namespace) and providing a way of ensuring it's css class declarations will not be affected by any holding global/parenting css class names you may end up using anywhere else on your site/app.
 
@@ -50,6 +64,8 @@ will become this:
            
        }
     }
+    
+As you can see, namespacing can be nested as well and will be scoped accordingly.
   
 If you are running under SCSS, you can specify a variable name for the component prefix like `@include v-namespace($varName)`. The namespace prefix will be translated as `#{$varName}` according to SCSS conventions, and will produce something like _`.#{$varName}className {`_. If you use variable references, you can manage all custom skinning component namespaces from a central location.
 
