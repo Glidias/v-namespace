@@ -54,7 +54,7 @@ Eg. `v-namespace('the-prefix-', 'mixed')`.
 
 ### mixed
 
-Specifies an explicit 'mixed' scope for  the `v-namespace`. When in this mode, you need to prepend all "namespacing" class names with a `-` prefix in from of the `.` dot.
+Specifies an explicit 'mixed' scope for  the `v-namespace`. When in this mode, you need to prepend all "namespacing" class names with a `-` prefix in from of the `.` dot. This allows you to mix both namespaced and global scopes together without having to re-declare an empty string namespace block for global scope.
 
 Example:
 
