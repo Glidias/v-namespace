@@ -79,8 +79,9 @@ Example:
    
  As you can see, only the `.-` pattern is replaced by the prefix.
  
- # Gulp integration
  
- Go to the following URL for gulp integration of this library:
+# Gulp integration
  
- https://github.com/Glidias/gulp-v-namespace/
+Go to the following URL for gulp integration of this library:
+ 
+https://github.com/Glidias/gulp-v-namespace/
