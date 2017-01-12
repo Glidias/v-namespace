@@ -105,7 +105,7 @@ Example:
    
  As you can see, only the `.-` pattern is replaced by the prefix.
  
-## Some Caveats
+# Some Caveats
  
 For simplicity of implementation, the code involves naive find and replace. So it might accidentally replace some strings (particularly within css comments) that might end up being mistaken as CSS class names. 
 
