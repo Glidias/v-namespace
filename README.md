@@ -18,7 +18,7 @@ Adds custom prefix to all class declarations within v-namespace blocks for your 
     `;
     css = doPrefix(css);
 
-Mainly used for distributing css-skinnable (but having completely self-contained base css styles) modular components anywhere (with a specific namespace) and providing a way of ensuring it's css class declarations will not be affected by any holding global/parenting css class names you may end up using anywhere else on your site/app.
+Mainly used for distributing css-skinnable (but having completely self-contained base css styles) 3rd party modular components anywhere (with a specific namespace) by providing a way of ensuring it's css class declarations will not be affected by any holding global/parenting css class names you may end up using anywhere else on your site/app.
 
 Just enclose your SCSS/CSS content some kind of `@include v-namespace("prefixNamespaceGoesHere-") {` block `}` mixin stub directive. Any content within that namespaced block  scope with _`./{some alphabet}/`_  (ie. a dot and then an alphabet) will be assumed to be a class identifier, and will be prepended with the literal string as specified in the namespace directive.
 
