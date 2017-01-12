@@ -1,5 +1,8 @@
 # v-namespace
-Adds custom prefix to all class declarations within v-namespace blocks for your CSS/SCSS files/strings.
+
+Adds custom prefix to all class declarations within v-namespace blocks for your CSS/SCSS files/strings. 
+
+`npm install v-namespace`
 
     var doPrefix = require("v-namespace");
     var css = `
