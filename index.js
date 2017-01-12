@@ -167,7 +167,7 @@ function formUpByMatches(str, matches, stackIndex, prefix, flags) {
 
   var finalResult = replaceSource(source, 0);
 
-  console.log(finalResult);
+ // console.log(finalResult);
 
   return finalResult;
 }
