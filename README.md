@@ -109,7 +109,9 @@ Example:
  
 For simplicity of implementation, the code involves naive find and replace. So it might accidentally replace some strings (particularly within css comments) that might end up being mistaken as CSS class names. 
 
-It's best to leave your CSS code uncommeted within namespaced blocks, and/or ensure any `.` dot character has a leading space after it to avoid accidental prefixing. eg. Use of `content:` CSS property would be particular tricky if you need to have an alphabet directly after a preceding dot, and you might have to resort to SCSS variable names declared outside of any component namespaced block to get around the caveat.
+Also, it won't support namespacing any SCSS `@include` directives or mixins directly within the namespace block and it's only Find+Replace over the current document, and doesn't involve an actual AST (Abstract syntax tree) preprocessor that could modify the way the actual file works at compile time itself.  (Anyone know of a SASS AST preprocessor that works with no issues?)
+
+It's best to leave your CSS code uncommented within namespaced blocks, and/or ensure any `.` dot character has a leading space after it to avoid accidental prefixing. eg. Use of `content:` CSS property would be particular tricky if you need to have an alphabet directly after a preceding dot, and you might have to resort to SCSS variable names declared outside of any component namespaced block to get around the caveat.
  
  
 # Gulp integration
